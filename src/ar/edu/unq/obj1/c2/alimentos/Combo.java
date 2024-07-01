@@ -28,8 +28,12 @@ public class Combo implements Alimento {
 //  opcion map  + reduce (parecido a map + sum de wollok)		
 //		return comidas.stream().mapToInt( (alimento) -> alimento.energiaQueAporta() ).reduce(0, (a,b)->a+b );
 	
-		//Esta es la opción más parecida a collecion.sum(bloque) de wollok
-		return comidas.stream().collect(Collectors.summingInt((alimento)->alimento.energiaQueAporta()));
+		//Esta es la opción con collect
+		//return comidas.stream().collect(Collectors.summingInt((alimento)->alimento.energiaQueAporta()));
+	
+		return comidas.stream()
+				.mapToInt((alimento) -> alimento.energiaQueAporta())
+				.sum();
 	}
 	
 	public Collection<Alimento> aportanMasDe(int cantidad) {
