@@ -94,6 +94,7 @@ public class Golondrina {
 - validar la energia para volar
 - Hacer un test (assertThrows)
 
+```
 package ar.edu.unq.obj1;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -101,7 +102,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-```
 public class Golondrina {
 
 	private int energia = 100;
