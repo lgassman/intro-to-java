@@ -1,5 +1,33 @@
 # Intro a java
 
+## Entorno de desarrollo.
+
+### JDK
+
+Un programa java se compila a bytecode, por lo que se necesita una máquina
+virtual java para ejecutar(JVM). 
+
+Una JRE es la distribución de una JVM para una arquitectura en particular.
+Es algo que se instala en la computadora.
+
+Una JVM es una JRE + herramientas para programar (básicamente el compilador)
+
+
+Por lo tanto es necesario instalar una JDK. Hay varias disponibles para
+lo que necesiten, la usada como referencia es:
+
+[Openjdk](https://openjdk.org/projects/jdk/)
+
+También se suele usar la de oracle, ya que esa empresa compró a SUN, madre
+de java. 
+
+
+### IDE
+
+Hay varios ides para java, el que uso yo y también recomiendan en objetos 2 es [eclipse](eclipse.org), aunque viene perdiendo terreno desde hace varios años frente al intellij.
+También existe el netbeans que es el recomendado por oracle.
+
+
 ## Hello World
 
 Este es un hello world
@@ -289,5 +317,42 @@ public class Combo implements Alimento {
 	}
 
 }
- ``
+ ```
+ 
+ ## Singletons
+ 
+ Y si posta necesitaba un object{} de wollok?
+ 
+ Entonces hay que hacer una clase que se pueda instanciar una sola vez,
+ y esté de acceso global.
+ 
+ Generalmente se instancia de manera lazy, siendo ésta una de las situaciones
+ en que se permite que un método tenga efecto y devuelva un valor.
+ 
+
+ 
+ ```
+ public class Entrenador {
+	
+	private static Entrenador instance;
+
+	private Collection<Ave> aves = new ArrayList<Ave>(); 
+	
+	
+	private Entrenador() {
+		
+	}
+	
+	public static Entrenador getInstance() {
+		if (instance == null) {
+			instance = new Entrenador();
+		}
+		return instance;
+	}
+ ```
+ 
+ 
+ 
+ 
+ 
 

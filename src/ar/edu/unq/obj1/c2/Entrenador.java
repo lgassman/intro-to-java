@@ -4,12 +4,21 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Entrenador {
+	
+	private static Entrenador instance;
 
 	private Collection<Ave> aves = new ArrayList<Ave>(); 
 	
 	
-	public Entrenador() {
+	private Entrenador() {
 		
+	}
+	
+	public static Entrenador getInstance() {
+		if (instance == null) {
+			instance = new Entrenador();
+		}
+		return instance;
 	}
 		
 	public Entrenador(Collection<Ave> aves) {
